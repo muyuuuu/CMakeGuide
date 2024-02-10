@@ -1,21 +1,7 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.1)
 
-if(CMAKE_BUILD_TYPE MATCHES "(Release|RELEASE|release)")
-    add_definitions(-DRELEASE)
-else()
-    add_definitions(-DDEBUG)
-endif()
+project(my_project)
 
-project(demo)
+add_subdirectory(project)
 
-# 可执行程序的名字
-set(APP_NAME_1 test1)
-set(APP_NAME_2 test2)
-
-# 添加子目录
-add_subdirectory(calc)
-add_subdirectory(sort)
-add_subdirectory(test1)
-add_subdirectory(test2)
-
-add_subdirectory(src)
+add_subdirectory(test)

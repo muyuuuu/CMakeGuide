@@ -11,7 +11,7 @@ extern "C"
 #include "ext.h"
 #include "log.h"
 
-int add(int a, int b);
+static int add(int a, int b);
 
 #ifdef __cpluscplus
 }

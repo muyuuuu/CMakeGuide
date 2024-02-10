@@ -1,6 +1,6 @@
 #include "test.h"
 
-#define TEST_TABLE                    \
+#define TEST_TABLE                       \
     X_MACROS(TEST_CALC,  test_calc)       \
     X_MACROS(TEST_COLOR, test_show_rgb)      \
 
@@ -42,18 +42,18 @@ static int cmd_handle(int cmd)
 
 int main()
 {
-    printf("=============== summary report ===================");
-    int total = sizeof(cmd_e) / sizeof(int) - 2;
+    printf("=============== summary report ===================\n");
+    int total = TEST_END - 1;
     int passed = 0;
 
     for (int i = TEST_START; i < TEST_END; i++)
     {
         if ((i > TEST_START) && (i < TEST_END))
         {
-            if (0 == cmd_handle(i))
+            if (0 == cmd_handle(i - 1))
             {
                 passed++;
-                printf("=============== Case: %d TEST Passed ===================", i);
+                printf("=============== Case: %d TEST Passed ===================\n", i);
             }
             else
             {
@@ -61,9 +61,9 @@ int main()
             }
         }
     }
-    printf("=============== total: %d ===================", total);
-    printf("=============== pass : %d ===================", passed);
-    printf("=============== fail: %d ===================", total - passed);
+    printf("=============== total: %d ===================\n", total);
+    printf("=============== pass : %d ===================\n", passed);
+    printf("=============== fail: %d ===================\n", total - passed);
 
     return 0;
 }

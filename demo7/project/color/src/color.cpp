@@ -11,9 +11,9 @@ int ShowRGB(int R, int G, int B)
     {
         return INVALID;
     }
-    LOG("ShowRGB", "R is %d", R);
-    LOG("ShowRGB", "G is %d", G);
-    LOG("ShowRGB", "B is %d", B);
+    LOG("ShowRGB", "R is %d\n", R);
+    LOG("ShowRGB", "G is %d\n", G);
+    LOG("ShowRGB", "B is %d\n", B);
     ShowInfo2();
     return SUCCESS;
 }

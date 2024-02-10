@@ -7,7 +7,7 @@ extern "C"
 #endif
 
 #include "ext.h"
-#include "log.h"
+#include "status.h"
 
 #include <stdio.h>
 
@@ -18,13 +18,13 @@ extern "C"
 
 #define UNIT_TEST(exper, res) \
     do { \
-        LOG("UNIT_TEST", __FILE_LINE__ ":calling " #exper "\n"); \
+        printf("UNIT_TEST" __FILE_LINE__  ":calling " #exper "\n"); \
         if (0 == (exper)) { \
-            LOG("UNIT_TEST", __FILE_LINE__ ":error \n"); \
+            printf("UNIT_TEST" __FILE_LINE__  ":error \n"); \
             res = -1; \
         } else { \
             res = 0; \
-            LOG("UNIT_TEST", __FILE_LINE__ ":passed \n"); \
+            printf("UNIT_TEST" __FILE_LINE__  ":passed \n"); \
         } \
     } while(0)
 

@@ -6,8 +6,6 @@ extern "C"
 {
 #endif
 
-#include "status.h"
-
 int multiply(int a, int b);
 
 int ShowRGB(int R, int G, int B);
