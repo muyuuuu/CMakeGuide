@@ -1,11 +1,9 @@
-#include <iostream>
+#include "info.h"
 
 int main()
 {
-#ifdef TEST
-    std::cout << "cond 1" << std::endl;
-#else
-    std::cout << "cond 2" << std::endl;
-#endif
+    ShowInfo1();
+    ShowInfo2();
+    ShowInfo3();
     return 0;
 }
