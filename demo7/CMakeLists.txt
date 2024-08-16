@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.0)
 
-project(my_project)
+project(HelloWorld)
 
-add_subdirectory(project)
+message(STATUS "======= ${PROJECT_SOURCE_DIR}")
+# 头文件
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
-add_subdirectory(test)
+add_executable(main  main.cpp)

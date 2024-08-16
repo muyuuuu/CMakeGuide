@@ -2,18 +2,21 @@ cmake_minimum_required(VERSION 3.0)
 
 project(HelloWorld)
 
-# 包含头文件路径
+# 头文件
 include_directories(${PROJECT_SOURCE_DIR}/inc)
 
-# 包含静态库路径
-# link_directories(${PROJECT_SOURCE_DIR}/lib)
+# 源文件
+aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SRC_LIST)
 
-# 链接静态库
-# link_libraries(libinfo.a)
+# 设置动态库/静态库生成路径
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/lib)
 
-# 指定要链接的动态库的路径
-link_directories(${PROJECT_SOURCE_DIR}/lib)
+# 制作静态库
+# add_library(info STATIC ${SRC_LIST})
 
-add_executable(main main.cpp)
+# 制作动态库
+add_library(info SHARED ${SRC_LIST})
 
-target_link_libraries(main libinfo.so)
+set(EXPORT_DIR ${CMAKE_BINARY_DIR}/export)                                # 设置导出路径
+install(TARGETS info LIBRARY DESTINATION ${EXPORT_DIR})                   # 导出 info 库到 build/export
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/inc DESTINATION ${EXPORT_DIR}/)   # 将头文件导出到 build/export/
