@@ -31,7 +31,11 @@ void test() {
 | demo8  | 特殊宏定义                                                                                                                            |
 | demo9  | 一个含有加载库、自动化测试、日志输出多级目录的小项目，从此之后 `cmake` 问题不大                                                       |
 | demo10 | `demo9` 感觉不太行，有炫技的嫌疑，可以参考我另外的计算框架 [`CUFX`](https://github.com/muyuuuu/CUFX/tree/main/CUFX) 中的 `cmake` 写法 |
+
+# 进阶
+
 | demo11 | 使用 cmake 检查代码，提升代码质量                                                                                                     |
+| demo12 | 设置 cmake 全局变量，将 B 目录的头文件和代码打包供 A 目录使用                                                                         |
 
 # 参考
 
